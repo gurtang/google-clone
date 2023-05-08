@@ -3,7 +3,8 @@ import Link from "next/link";
 import WebSearchResults from "@/components/WebSearchResults";
 
 async function WebSearchPage({ searchParams }) {
-  const address = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}`;
+  const startIndex = searchParams.start || "1";
+  const address = `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&start=${startIndex}`;
   const response = await fetch(address);
 
   if (!response.ok) {
