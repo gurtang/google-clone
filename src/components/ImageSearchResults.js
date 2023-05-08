@@ -11,8 +11,8 @@ function ImageSearchResults({ results }) {
         }
       >
         {results.items.map((result) => (
-          <div className={"mb-8"}>
-            <div key={result.link} className={"group"}>
+          <div key={result.link} className={"mb-8"}>
+            <div className={"group"}>
               <Link
                 className={
                   "h-60 group-hover:shadow-xl transition-shadow w-full object-contain"
